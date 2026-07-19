@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -89,20 +89,6 @@
           <p class="value">21411 Orrick Ave, Carson, CA 90745</p>
         </div>
       </div>
- 
-      <div class="detail-row">
-        <div class="detail-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v13l-7 3-7-3V4Z" stroke="#2B3A34" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="detail-text">
-          <p class="label">Registry</p>
-          <p class="value">[Registry Name]</p>
-          <p class="sub">Your presence is the real present 💚</p>
-        </div>
-      </div>
- 
-      <a class="add-cal" href="#" onclick="return false;">+ Add to calendar</a>
-    </div>
   </section>
  
   <!-- RSVP -->
@@ -110,17 +96,60 @@
     <h2 class="section-title">RSVP</h2>
     <div class="card">
       <p class="copy">Kindly let us know if you'll be joining the celebration — every fairy on the guest list counts!</p>
-      <a class="rsvp-btn" href="mailto:rsvp@example.com?subject=RSVP%20-%20Baby%20Shower&body=Name%3A%0AGuests%3A%0AAttending%3A%20Yes%2FNo">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="#fff" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="#fff" stroke-width="1.7"/></svg>
-        RSVP by email
-      </a>
-      <p class="rsvp-deadline">please respond by [Month Day]</p>
+ 
+      <form id="rsvp-form" class="rsvp-form">
+        <input type="hidden" name="access_key" value="41968f0c-707c-4ba1-8356-a6436732bf58">
+        <input type="hidden" name="subject" value="New RSVP — Baby Shower">
+        <input type="hidden" name="from_name" value="Baby Shower Invitation">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+ 
+        <div class="field">
+          <label for="rsvp-name">Your name</label>
+          <input type="text" id="rsvp-name" name="name" required placeholder="Jane Doe">
+        </div>
+ 
+        <div class="field">
+          <label for="rsvp-email">Email</label>
+          <input type="email" id="rsvp-email" name="email" required placeholder="jane@example.com">
+        </div>
+ 
+        <div class="field">
+          <label class="field-label">Will you attend?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="attending" value="Yes, I'll be there" checked>
+              <span>Yes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="attending" value="Sorry, can't make it">
+              <span>Can't make it</span>
+            </label>
+          </div>
+        </div>
+ 
+        <div class="field">
+          <label for="rsvp-guests">Number of guests (including you)</label>
+          <input type="number" id="rsvp-guests" name="guests" min="1" value="1">
+        </div>
+ 
+        <div class="field">
+          <label for="rsvp-message">Message <span class="optional">(optional)</span></label>
+          <textarea id="rsvp-message" name="message" rows="3" placeholder="Well wishes, dietary notes, anything else!"></textarea>
+        </div>
+ 
+        <button type="submit" class="rsvp-btn" id="rsvp-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="#fff" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="#fff" stroke-width="1.7"/></svg>
+          <span>Send RSVP</span>
+        </button>
+ 
+        <p id="rsvp-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
  
   <!-- FOOTER -->
   <footer>
-    <p class="fw-title">See you there</p>
+    <p class="fw-title">See you there!</p>
     <svg class="fw-wings" viewBox="0 0 220 170" aria-hidden="true">
       <path d="M110 85 C70 30, 20 25, 12 60 C6 88, 40 108, 78 100 C60 112, 30 130, 40 150 C50 168, 90 150, 110 110 Z" fill="#3F8F6B"/>
       <path d="M110 85 C150 30, 200 25, 208 60 C214 88, 180 108, 142 100 C160 112, 190 130, 180 150 C170 168, 130 150, 110 110 Z" fill="#3F8F6B"/>
@@ -132,4 +161,3 @@
 <script src="script.js"></script>
 </body>
 </html>
- 
