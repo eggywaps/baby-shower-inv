@@ -1,3 +1,49 @@
+// RSVP form — submits to Web3Forms without leaving the page
+(function(){
+  var form = document.getElementById('rsvp-form');
+  if(!form) return;
+ 
+  var statusEl = document.getElementById('rsvp-status');
+  var submitBtn = document.getElementById('rsvp-submit');
+  var btnLabel = submitBtn.querySelector('span');
+ 
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+ 
+    submitBtn.disabled = true;
+    btnLabel.textContent = 'Sending…';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+ 
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData);
+ 
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        form.reset();
+        statusEl.textContent = "🎉 RSVP sent — thank you! We can't wait to see you.";
+        statusEl.classList.add('success');
+        btnLabel.textContent = 'Send RSVP';
+        submitBtn.disabled = false;
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    })
+    .catch(function(){
+      statusEl.textContent = 'Something went wrong sending your RSVP. Please try again.';
+      statusEl.classList.add('error');
+      btnLabel.textContent = 'Send RSVP';
+      submitBtn.disabled = false;
+    });
+  });
+})();
+ 
 // Ambient pixie dust — soft drifting sparkles, respects reduced motion
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
