@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>You're Invited — A Little Pixie is Coming!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Caveat:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<canvas id="dust-canvas" aria-hidden="true"></canvas>
+ 
+<div class="page">
+ 
+  <!-- HERO -->
+  <header class="hero">
+    <p class="eyebrow">a sprinkle of magic is on the way</p>
+ 
+    <div class="wings-wrap" aria-hidden="true">
+      <span class="flight-dot"></span>
+      <svg viewBox="0 0 220 170" width="220" height="170">
+        <defs>
+          <linearGradient id="wingGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#CBBEEA" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#AEDFC5" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <!-- left wing -->
+        <path d="M110 85 C70 30, 20 25, 12 60 C6 88, 40 108, 78 100 C60 112, 30 130, 40 150 C50 168, 90 150, 110 110 Z"
+              fill="url(#wingGrad)" stroke="#8FBFA0" stroke-width="1.2"/>
+        <!-- right wing -->
+        <path d="M110 85 C150 30, 200 25, 208 60 C214 88, 180 108, 142 100 C160 112, 190 130, 180 150 C170 168, 130 150, 110 110 Z"
+              fill="url(#wingGrad)" stroke="#8FBFA0" stroke-width="1.2"/>
+        <!-- body glow -->
+        <ellipse cx="110" cy="95" rx="7" ry="13" fill="#F6C9D8" opacity="0.9"/>
+      </svg>
+    </div>
+ 
+    <h1 class="title">Baby Bloom<span class="and">is on the way</span></h1>
+ 
+    <p class="hero-sub">Please flutter over and help us celebrate<br><strong>Gia and Delmar</strong>'s little one-to-be.</p>
+ 
+    <div class="divider" aria-hidden="true">
+      <span class="line"></span>
+      <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 6 4 11 4 15a8 8 0 0 0 16 0c0-4-3-9-8-13Z" fill="#3F8F6B" opacity="0.75"/></svg>
+      <span class="line"></span>
+    </div>
+  </header>
+ 
+  <!-- INTRO -->
+  <section class="intro">
+    <p>Every fairy tale needs a beginning — ours starts with tiny toes and a whole lot of pixie dust. Come in your prettiest pastels and join us for an afternoon of games, treats, and well-wishes for the newest little sprite in our story.</p>
+  </section>
+ 
+  <!-- DETAILS -->
+  <section id="details">
+    <h2 class="section-title">When &amp; Where</h2>
+    <div class="card">
+ 
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="3" stroke="#2B3A34" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="#2B3A34" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Date</p>
+          <p class="value">Saturday, October 10, 2026</p>
+        </div>
+      </div>
+ 
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#2B3A34" stroke-width="1.6"/><path d="M12 7v5l3.2 2" stroke="#2B3A34" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Time</p>
+          <p class="value">12:00 PM – 5:00 PM</p>
+        </div>
+      </div>
+ 
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z" stroke="#2B3A34" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.3" stroke="#2B3A34" stroke-width="1.6"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Venue</p>
+          <p class="value">21411 Orrick Ave, Carson, CA 90745</p>
+        </div>
+      </div>
+ 
+      <div class="detail-row">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v13l-7 3-7-3V4Z" stroke="#2B3A34" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Registry</p>
+          <p class="value">[Registry Name]</p>
+          <p class="sub">Your presence is the real present 💚</p>
+        </div>
+      </div>
+ 
+      <a class="add-cal" href="#" onclick="return false;">+ Add to calendar</a>
+    </div>
+  </section>
+ 
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <h2 class="section-title">RSVP</h2>
+    <div class="card">
+      <p class="copy">Kindly let us know if you'll be joining the celebration — every fairy on the guest list counts!</p>
+      <a class="rsvp-btn" href="mailto:rsvp@example.com?subject=RSVP%20-%20Baby%20Shower&body=Name%3A%0AGuests%3A%0AAttending%3A%20Yes%2FNo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="#fff" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="#fff" stroke-width="1.7"/></svg>
+        RSVP by email
+      </a>
+      <p class="rsvp-deadline">please respond by [Month Day]</p>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <p class="fw-title">See you there</p>
+    <svg class="fw-wings" viewBox="0 0 220 170" aria-hidden="true">
+      <path d="M110 85 C70 30, 20 25, 12 60 C6 88, 40 108, 78 100 C60 112, 30 130, 40 150 C50 168, 90 150, 110 110 Z" fill="#3F8F6B"/>
+      <path d="M110 85 C150 30, 200 25, 208 60 C214 88, 180 108, 142 100 C160 112, 190 130, 180 150 C170 168, 130 150, 110 110 Z" fill="#3F8F6B"/>
+    </svg>
+  </footer>
+ 
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+ 

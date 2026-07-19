@@ -1,0 +1,310 @@
+:root{
+  --ivory:#FFFBF6;
+  --pink:#F6C9D8;
+  --pink-deep:#EBA8C1;
+  --lavender:#CBBEEA;
+  --lavender-deep:#AC97DE;
+  --green:#3F8F6B;
+  --green-soft:#AEDFC5;
+  --gold:#F0C869;
+  --ink:#2B3A34;
+  --ink-soft:#5B6E66;
+}
+ 
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:'Quicksand', sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+ 
+a{color:inherit;}
+ 
+.page{
+  max-width:480px;
+  margin:0 auto;
+  position:relative;
+  min-height:100vh;
+}
+ 
+/* ---------- Ambient pixie dust (fixed, whole page) ---------- */
+#dust-canvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:1;
+}
+ 
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  padding:64px 28px 96px;
+  text-align:center;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(203,190,234,0.55) 0%, rgba(203,190,234,0) 70%),
+    radial-gradient(70% 60% at 20% 90%, rgba(174,223,197,0.5) 0%, rgba(174,223,197,0) 70%),
+    linear-gradient(180deg, #FFFBF6 0%, #FDF3F6 55%, #FFFBF6 100%);
+  overflow:hidden;
+}
+ 
+.eyebrow{
+  font-family:'Caveat', cursive;
+  font-size:22px;
+  font-weight:600;
+  color:var(--green);
+  letter-spacing:0.03em;
+  display:inline-block;
+  transform:rotate(-3deg);
+  margin:0 0 6px;
+  position:relative;
+  z-index:3;
+}
+ 
+.wings-wrap{
+  position:relative;
+  width:220px;
+  height:170px;
+  margin:6px auto 8px;
+  z-index:3;
+}
+ 
+.flight-dot{
+  position:absolute;
+  top:40%;
+  left:-10px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:radial-gradient(circle, #fff 0%, var(--gold) 55%, transparent 75%);
+  box-shadow:0 0 12px 4px rgba(240,200,105,0.7);
+  animation:fly-across 3.6s ease-in-out 0.4s 1 forwards;
+  opacity:0;
+}
+ 
+@keyframes fly-across{
+  0%{ left:-10px; top:55%; opacity:0; transform:scale(0.6);}
+  8%{ opacity:1; transform:scale(1);}
+  30%{ left:35%; top:5%;}
+  55%{ left:65%; top:60%;}
+  80%{ left:88%; top:20%;}
+  100%{ left:104%; top:35%; opacity:0; transform:scale(0.5);}
+}
+ 
+h1.title{
+  font-family:'Mrs Saint Delafield', cursive;
+  font-size:clamp(52px, 15vw, 68px);
+  line-height:0.95;
+  font-weight:400;
+  margin:4px 0 2px;
+  color:var(--green);
+  position:relative;
+  z-index:3;
+}
+ 
+h1.title .and{
+  display:block;
+  font-size:0.5em;
+  color:var(--pink-deep);
+  margin:2px 0;
+}
+ 
+.hero-sub{
+  font-size:16px;
+  color:var(--ink-soft);
+  max-width:300px;
+  margin:10px auto 0;
+  line-height:1.5;
+  position:relative;
+  z-index:3;
+}
+ 
+.hero-sub strong{ color:var(--ink); font-weight:700; }
+ 
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:26px auto 0;
+  position:relative;
+  z-index:3;
+}
+.divider .leaf{ width:16px; height:16px; opacity:0.85; }
+.divider .line{ width:36px; height:1px; background:var(--lavender-deep); opacity:0.6; }
+ 
+/* ---------- SECTIONS ---------- */
+section{
+  position:relative;
+  z-index:2;
+  padding:40px 26px;
+}
+ 
+.intro{
+  text-align:center;
+  padding-top:8px;
+}
+.intro p{
+  font-size:16.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  margin:0 auto;
+  max-width:340px;
+}
+ 
+/* card */
+.card{
+  background:#FFFFFF;
+  border-radius:22px;
+  padding:26px 24px;
+  box-shadow:0 14px 34px -18px rgba(63,143,107,0.28), 0 2px 10px -4px rgba(43,58,52,0.06);
+  border:1px solid rgba(174,223,197,0.5);
+  position:relative;
+}
+ 
+.card::before{
+  content:"";
+  position:absolute;
+  top:-1px; left:24px; right:24px;
+  height:5px;
+  border-radius:0 0 6px 6px;
+  background:linear-gradient(90deg, var(--pink), var(--lavender), var(--green-soft));
+}
+ 
+.section-title{
+  font-family:'Caveat', cursive;
+  font-size:28px;
+  font-weight:600;
+  color:var(--green);
+  text-align:center;
+  margin:0 0 22px;
+  letter-spacing:0.01em;
+}
+ 
+.detail-row{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:13px 0;
+  border-bottom:1px dashed rgba(43,58,52,0.12);
+}
+.detail-row:last-child{ border-bottom:none; padding-bottom:0; }
+.detail-row:first-child{ padding-top:0; }
+ 
+.detail-icon{
+  flex:0 0 auto;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--pink);
+}
+.detail-row:nth-child(2) .detail-icon{ background:var(--lavender); }
+.detail-row:nth-child(3) .detail-icon{ background:var(--green-soft); }
+.detail-row:nth-child(4) .detail-icon{ background:var(--gold); }
+ 
+.detail-icon svg{ width:19px; height:19px; }
+ 
+.detail-text .label{
+  font-size:11.5px;
+  text-transform:uppercase;
+  letter-spacing:0.09em;
+  color:var(--ink-soft);
+  font-weight:700;
+  margin:0 0 2px;
+}
+.detail-text .value{
+  font-size:16.5px;
+  font-weight:600;
+  color:var(--ink);
+  margin:0;
+}
+.detail-text .sub{
+  font-size:13.5px;
+  color:var(--ink-soft);
+  margin:2px 0 0;
+  font-weight:500;
+}
+ 
+.add-cal{
+  display:inline-block;
+  margin-top:18px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
+  text-decoration:none;
+  border-bottom:2px solid var(--green-soft);
+  padding-bottom:2px;
+}
+ 
+/* RSVP */
+.rsvp{
+  text-align:center;
+}
+.rsvp .card{ padding-bottom:30px; }
+.rsvp p.copy{
+  font-size:15px;
+  color:var(--ink-soft);
+  line-height:1.6;
+  margin:0 0 22px;
+}
+.rsvp-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:var(--green);
+  color:#fff;
+  font-family:'Quicksand', sans-serif;
+  font-weight:700;
+  font-size:16px;
+  text-decoration:none;
+  padding:15px 30px;
+  border-radius:999px;
+  box-shadow:0 12px 24px -10px rgba(63,143,107,0.55);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.rsvp-btn:active{ transform:scale(0.97); }
+.rsvp-btn:focus-visible{ outline:3px solid var(--gold); outline-offset:3px; }
+ 
+.rsvp-deadline{
+  margin-top:16px;
+  font-family:'Caveat', cursive;
+  font-size:20px;
+  color:var(--pink-deep);
+  font-weight:600;
+}
+ 
+/* Footer */
+footer{
+  text-align:center;
+  padding:34px 26px 54px;
+}
+footer .fw-title{
+  font-family:'Mrs Saint Delafield', cursive;
+  font-size:30px;
+  color:var(--green);
+  margin:0 0 4px;
+}
+footer .fw-sub{
+  font-size:13px;
+  color:var(--ink-soft);
+  letter-spacing:0.04em;
+}
+footer .fw-wings{
+  width:46px;
+  height:46px;
+  margin:14px auto 0;
+  opacity:0.55;
+}
+ 
+@media (prefers-reduced-motion: reduce){
+  .flight-dot, #dust-canvas{ display:none !important; }
+}
+ 
