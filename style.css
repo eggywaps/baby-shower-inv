@@ -121,7 +121,7 @@ h1.title{
  
 h1.title .and{
   display:block;
-  font-size:0.5em;
+  font-size:0.75em;
   color:var(--pink-deep);
   margin:2px 0;
 }
@@ -156,7 +156,15 @@ section{
   z-index:2;
   padding:40px 26px;
 }
- 
+
+.gifts{
+  text-align:center;
+}
+
+.gifts .card{
+  text-align:center;
+}
+
 .intro{
   text-align:center;
   padding-top:8px;
