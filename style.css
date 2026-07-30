@@ -48,14 +48,13 @@ a{color:inherit;}
   text-align:center;
   background:
     /* stronger, more opaque color halos */
-    radial-gradient(75% 70% at 50% 0%, rgba(203,190,234,0.95) 0%, rgba(203,190,234,0) 80%),
-    radial-gradient(85% 80% at 20% 90%, rgba(174,223,197,0.9) 0%, rgba(174,223,197,0) 80%),
+    radial-gradient(80% 80% at 50% 0%, rgba(203,190,234,1) 0%, rgba(203,190,234,0) 85%),
+    radial-gradient(90% 90% at 20% 90%, rgba(174,223,197,0.95) 0%, rgba(174,223,197,0) 85%),
     /* base tint */
-    linear-gradient(180deg, #F7ECF2 0%, #F6E0E9 55%, #F7ECF2 100%),
-    /* subtle dark overlay to increase contrast */
-    linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.14));
-  /* multiply the color layers to make the overall hero darker/denser */
-  background-blend-mode:multiply, multiply, normal, normal;
+    linear-gradient(180deg, #F4DEE6 0%, #F2D3DE 55%, #F4DEE6 100%),
+    /* stronger dark overlay to increase contrast */
+    linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.28));
+  background-blend-mode: multiply, multiply, normal, normal;
   overflow:hidden;
 }
  
