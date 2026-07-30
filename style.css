@@ -127,7 +127,7 @@ h1.title{
 h1.title .and{
   display:block;
   font-size:0.75em;
-  color: var(--pink-deeper, var(--pink-deep));
+  color: #a13f5c; 
   margin:2px 0;
 }
  
