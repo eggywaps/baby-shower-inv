@@ -46,13 +46,10 @@ a{color:inherit;}
   position:relative;
   padding:64px 28px 96px;
   text-align:center;
-  /* softened, more visible color pools layered for a gentle, aesthetic look */
   background:
-    radial-gradient(40% 36% at 14% 18%, rgba(174,223,197,0.42) 0%, rgba(174,223,197,0) 55%),
-    radial-gradient(48% 42% at 82% 12%, rgba(203,190,234,0.42) 0%, rgba(203,190,234,0) 60%),
-    radial-gradient(26% 22% at 86% 26%, rgba(240,200,105,0.18) 0%, rgba(240,200,105,0) 55%),
-    linear-gradient(180deg, #FFFBF6 0%, #FFF6FA 40%, #FDF3F6 100%);
-  background-blend-mode: screen;
+    radial-gradient(60% 50% at 50% 0%, rgba(203,190,234,0.55) 0%, rgba(203,190,234,0) 70%),
+    radial-gradient(70% 60% at 20% 90%, rgba(174,223,197,0.5) 0%, rgba(174,223,197,0) 70%),
+    linear-gradient(180deg, #FFFBF6 0%, #FDF3F6 55%, #FFFBF6 100%);
   overflow:hidden;
 }
  
